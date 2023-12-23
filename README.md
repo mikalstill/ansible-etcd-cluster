@@ -1,6 +1,6 @@
-andrewrothstein.etcd-cluster
+andrewrothstein.etcd_cluster
 ===========================
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-etcd-cluster.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-etcd-cluster)
+![Build Status](https://github.com/andrewrothstein/ansible-etcd_cluster/actions/workflows/build.yml/badge.svg)
 
 Configures an etcd cluster. Runs a voting member on every host in the ```etcd-master``` group
 and a proxy on the rest of the hosts in the ```etcd``` group.
@@ -38,7 +38,7 @@ in your playbook:
 ```yml
 - hosts: etcd
   roles:
-    - role: andrewrothstein.etcd-cluster
+    - role: andrewrothstein.etcd_cluster
       # if you don't want to secure your install then use
       # etcd_secure: False
 ```
