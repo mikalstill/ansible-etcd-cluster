@@ -40,8 +40,7 @@
     - /etc/etcd
     - '{{ etcd_cluster_pki_dir }}'
 
-- name: Install PKI...
-  ansible.builtin.include_tasks: pki.yml
+- include_tasks: pki.yml
   when: etcd_secure | bool
 
 - name: Install etcd.service configuration
