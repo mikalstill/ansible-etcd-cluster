@@ -1,6 +1,6 @@
 ---
 - name: Installing etcd...
-  ansible.builtin.include_role:
+  include_role:
     name: andrewrothstein.etcd
 
 - name: Collect facts
