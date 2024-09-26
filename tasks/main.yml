@@ -4,7 +4,7 @@
     name: andrewrothstein.etcd
 
 - name: Collect facts
-  set_fact:
+  ansible.builtin.set_fact:
     cacheable: true
     etcd_listen_public: '{{ etcd_listen }}'
     etcd_listen_cluster: '{{ etcd_listen }}'
@@ -44,7 +44,7 @@
   ansible.builtin.include_tasks: pki.yml
   when: etcd_secure | bool
 
-- name: Install etcd.service configuration
+- name: Templating /etc/etcd/etcd.conf
   become: true
   become_user: root
   with_items:
@@ -57,8 +57,8 @@
     group: '{{ etcd_group }}'
     mode: '644'
   notify:
-    - restart etcd masters
-    - restart etcd members
+    - Restart etcd masters
+    - Restart etcd members
 
 - name: Configure init system
   ansible.builtin.include_tasks: '{{ etcd_init_system }}.yml'

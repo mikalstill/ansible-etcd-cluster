@@ -30,3 +30,16 @@ etcd_additional_envvars: {}
 
 etcd_io_class: 2 # best effort
 etcd_io_priority: 0 # highest priority
+# Additional environment vars for the service
+# etcd_additional_envvars:
+#   foo: bar
+#   baz: ding
+
+# systemd Service.TimeoutStartSec
+# etcd_service_start_timeout: '5min'
+
+# systemd Service.Restart
+# etcd_service_restart: on-failure
+
+# systemd Service.LimitNOFILE
+# etcd_service_limitnofile: 65536
